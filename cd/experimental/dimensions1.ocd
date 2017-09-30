@@ -1,5 +1,4 @@
 <CD xmlns="http://www.openmath.org/OpenMathCD">
-
 <CDComment>
 
      This document is distributed in the hope that it will be useful, 
@@ -38,13 +37,18 @@
 <CDURL> http://www.openmath.org/cd/dimensions1.ocd </CDURL>
 <CDReviewDate>2017-12-31</CDReviewDate>
 <CDStatus> experimental </CDStatus>
-<CDDate>2004-03-30</CDDate>
+<CDDate>2017-09-27</CDDate>
 <CDVersion>4</CDVersion>
-<CDRevision>1</CDRevision>
+<CDRevision>3</CDRevision>
 <CDComment>
-  Author: OpenMath Consortium
+  Author: OpenMath Consortium (James Davenport)
   SourceURL: https://github.com/OpenMath/CDs
 </CDComment>
+<CDUses>
+<CDName>norm1</CDName>
+<CDName>arith1</CDName>
+<CDName>relation1</CDName>
+</CDUses>
 
 <Description> 
 This CD defines symbols which represent basic physical dimensions.
@@ -142,11 +146,11 @@ distance between the points.
 <Role>constant</Role>
 <Description>
 This symbol represents the velocity physical dimension. It is the
-derivative of distance with respect to time.
+derivative of (vector) distance with respect to time.
 </Description>
 
 <CMP> velocity = displacement/time</CMP>
-
+<CMP> speed is the Euclidean norm of velocity </CMP>
 <FMP>
     <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
       <OMA>
@@ -196,6 +200,7 @@ second derivative of distance with respect to time.
 <Role>constant</Role>
 <Description>
 This symbol represents the time physical dimension.
+Note that the main units for time are defined in the units_time1 CD.
 </Description>
 </CDDefinition>
 
@@ -395,6 +400,7 @@ This symbol represents the energy physical dimension.
 </Description>
 
 <CMP> energy = mass*length^2/time^2 </CMP>
+<CMP> energy = force*length </CMP>
 
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
@@ -431,6 +437,17 @@ amount of a substance in a volume.
 </Description>
 
 <CMP> concentration = mass/length^3 </CMP>
+
+</CDDefinition>
+
+<CDDefinition>
+<Name> momentum </Name>
+<Description>
+This symbol represents the momentum physical dimension, it is mass
+times velocity.
+</Description>
+
+<CMP> momentum = mass*velocity </CMP>
 
 <FMP><OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0" cdbase="http://www.openmath.org/cd">
   <OMA>
